@@ -21,10 +21,19 @@ namespace E_commerce
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                       "~/Scripts/bxslider.min.js",
+                        "~/Scripts/jquery.easing.1.3.min.js",
+                         "~/Scripts/jquery.sticky.js",
+                          "~/Scripts/main.js",
+                           "~/Scripts/owl.carousel.min.js",
+                            "~/Scripts/script.slider.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                       "~/Content/font-awesome.css",
+                        "~/Content/owl.carousel.css",
+                         "~/Content/responsive.css",
                       "~/Content/site.css"));
         }
     }
