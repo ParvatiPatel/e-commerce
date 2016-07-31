@@ -1,69 +1,86 @@
 ﻿@model IEnumerable<E_commerce.Models.Item>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Item List";
 }
 
-<h2>Index</h2>
 
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Item List</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End Page title area -->
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <br />
+    <a href="@Url.Action("Create")" class="btn button3" title="Add"><i class="fa fa-plus fa-lg"></i> Add</a>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Product.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ThumbUrl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OriginalUrl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tag)
-        </th>
-        <th></th>
-    </tr>
+<table class="table table-hover">
+    <thead class="tthead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThumbUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OriginalUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tag)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThumbUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginalUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tag)
+                </td>
+                <td>
+                    
+                    <a href="@Url.Action("Edit", new { id = item.IID })" class="btn button2" title="Edit"><i class="fa fa-pencil fa-sm"></i></a>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Product.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ThumbUrl)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OriginalUrl)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tag)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IID })
-        </td>
-    </tr>
-}
+                    <a href="@Url.Action("Delete", new { id = item.IID })" class="btn button1" onclick="return confirm('Are you sure you wish to delete this article?');" title="Delete"><i class="fa fa-trash fa-sm"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+      
 
 </table>
