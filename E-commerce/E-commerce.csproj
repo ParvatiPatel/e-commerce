@@ -192,6 +192,7 @@
     <Content Include="Assests\banner\2.png" />
     <Content Include="Assests\banner\3.jpg" />
     <Content Include="Assests\banner\4.png" />
+    <Content Include="Assests\crossword.png" />
     <Content Include="Assests\logo.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

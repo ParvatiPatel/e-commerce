@@ -613,7 +613,7 @@ padding: 35px 0 180px;}
     padding: 7px 20px;
     text-transform: uppercase;border: 1px solid #5a88ca;
 }
-.newsletter-form input[type="submit"]:hover {background: #222;border-color: #666}
+.newsletter-form input[type="submit"]:hover {background: #17a78b;border-color: #17a78b}
 .newsletter-form {
     margin-top: 25px;
 }
@@ -678,15 +678,16 @@ width: 10px;
   margin: 10px 0 0;
 }
 
-.product-big-title-area {background: url(img/crossword.png) repeat scroll 0 0 #5a88ca}
+.product-big-title-area {background: url(../Assests/crossword.png) repeat scroll 0 0 #5a88ca}
 
 .product-bit-title h2 {
   font-family: raleway;
   font-size: 50px;
   font-weight: 200;
   margin: 0;
-  padding: 50px 0;color: #fff;
+  padding: 0px 0;color: #fff;
 }
+
 
 .single-product-area .zigzag-bottom {background-color: #f4f4f4}
 
@@ -718,7 +719,23 @@ input[type="submit"], button[type=submit] {
     padding: 11px 20px;
     text-transform: uppercase;
 }
-input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
+input[type="submit"]:hover, button[type=submit]:hover {background-color: #17a78b;color: #fff;}
+.button1 {
+    background: none repeat scroll 0 0 #fa8072;
+    border: medium none;
+    color: #fff;
+    padding: 11px 20px;
+    text-transform: uppercase;
+}
+.button1:hover {background-color: #17a78b;color: #fff;}
+.button2 {
+    background: none repeat scroll 0 0 #ffd900;
+    border: medium none;
+    color: #fff;
+    padding: 11px 20px;
+    text-transform: uppercase;
+}
+.button2:hover {background-color: #17a78b;color: #fff;}
 .single-sidebar input[type="text"] {
     margin-bottom: 10px;
     width: 100%;
@@ -1120,4 +1137,37 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 
 .pagination > li > a, .pagination > li > span {
   color: #5a88ca;
+}
+
+
+fieldset.scheduler-border {
+    border: 1px groove #5a88ca !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+
+ .input-validation-error {
+        border: 1px solid #ff0000 !important;
+       
+    }
+.field-validation-error{
+     display: inline-block;  width:100%;
+color:#ff0000 ;
+font-size:.9em;
+//background-color:#fa8072;
+padding:10px;
+ }
+
+.textarea1{
+    width:100%;
+    height:100px;
+    border-radius:5px;
 }
