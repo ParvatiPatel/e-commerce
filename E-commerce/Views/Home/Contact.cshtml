@@ -3,9 +3,9 @@
     ViewBag.Title = "Contact";
 }
 @*
-    * @File name : Contact view
-    * @Author : Ritesh Patel and Parvati Patel
-    * @Website name : Taj Mahel(http://indianrestaurant.azurewebsites.net/)
+    * @File name : Mail Model
+    * @Author : Ritesh, Rutvik, Parvati and Himanshu
+    * @Website name :E-commerece()
     * @File description : This view provide contact form and location info.
 *@
 
@@ -29,8 +29,10 @@
                     </div>*@
     @using (Html.BeginForm("Contact", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @id = "contact-form", role = "form" }))
     {
+        @Html.AntiForgeryToken()
         <fieldset class="scheduler-border">
             <legend class="scheduler-border">Leave your comment.</legend>
+            <h3>@ViewBag.Message</h3>
             <div class="form-horizontal">
                 @Html.ValidationSummary()
                 <div class="form-group">
