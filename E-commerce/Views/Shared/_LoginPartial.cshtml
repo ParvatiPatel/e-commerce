@@ -1,4 +1,10 @@
-﻿@using Microsoft.AspNet.Identity
+﻿<!--
+File name : _LoginPartial.cshtml
+Author : Ritesh Patel, Parvati Patel, Himanshu Patel and Rutvik Patel
+Website name : Ecommerce(http://pnpecommerce.azurewebsites.net/)
+File description : _LoginPartial Page - to develop navbar based on the user logged in.
+-->
+@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
