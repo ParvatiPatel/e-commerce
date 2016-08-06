@@ -177,16 +177,20 @@ namespace E_commerce.Controllers
         // GET: Items/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Item item = db.Items.Find(id);
-            if (item == null)
-            {
-                return HttpNotFound();
-            }
-            return View(item);
+            db.Items.Remove(item);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+            /* if (id == null)
+             {
+                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+             }
+             Item item = db.Items.Find(id);
+             if (item == null)
+             {
+                 return HttpNotFound();
+             }
+             return View(item);*/
         }
 
         // POST: Items/Delete/5

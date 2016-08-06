@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using E_commerce.Models;
+using static E_commerce.EmailService;
 
 namespace E_commerce
 {

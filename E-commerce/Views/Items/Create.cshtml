@@ -29,6 +29,7 @@ File description :Create Page is used for creating product item.
         @Html.AntiForgeryToken()
         <fieldset class="scheduler-border">
             <legend class="scheduler-border"> Add Item</legend>
+            <p style="color:red;">@Html.Raw(ViewBag.alert)</p>
             <div class="form-horizontal">
               
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })

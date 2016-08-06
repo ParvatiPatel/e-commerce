@@ -1204,3 +1204,8 @@ padding:10px;
 .thumb{
     width:100px;height:100px;
 }
+.divborder{
+   border: 1px groove #5a88ca !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin:15px;
+}
