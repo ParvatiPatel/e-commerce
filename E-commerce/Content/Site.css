@@ -366,13 +366,19 @@ z-index: 999;}
 .promo3 { background:#fa8072;}
 .promo4 { background:#4abebd;}
 .section-title {
-  font-family: "Raleway",sans-serif;
+
+  font-family:'Bradley Hand ITC';
+  font-style:oblique;
   font-size: 50px;
-  font-weight: 100;
   margin-bottom: 50px;
   text-align: center;
 }
-
+.section-line{
+    font-size:20px;
+    color:orange;
+    font-style:oblique;
+    text-align:right;
+}
 
 .product-f-image {
     position: relative;
@@ -548,7 +554,7 @@ z-index: 999;}
 .footer-top-area .zigzag-bottom{background: #f4f4f4}
 .footer-top-area {background: none repeat scroll 0 0 #333;
 color: #999;
-padding: 35px 0 180px;}
+padding: 35px 0 50px;}
 
 
 .footer-bottom-area {background: #000;color: #fff}
@@ -592,7 +598,7 @@ padding: 35px 0 180px;}
   width: 40px;border: 1px solid #5a88ca;
 }
 
-.footer-social a:hover {background-color: #222;border-color: #666}
+.footer-social a:hover {background-color: #17a78b;border-color: #666}
 
 .footer-social {margin-top: 20px}
 
@@ -687,7 +693,9 @@ width: 10px;
   margin: 0;
   padding: 0px 0;color: #fff;
 }
-
+.product-bit-title section-line{
+    
+}
 
 .single-product-area .zigzag-bottom {background-color: #f4f4f4}
 
@@ -1170,4 +1178,92 @@ padding:10px;
     width:100%;
     height:100px;
     border-radius:5px;
+}
+/* About Page Css*/
+.about-breifing .item {
+    color: #ffffff;
+    padding: 0px 15%;
+}
+.about-breifing .col-sm-6:first-child {
+    background: #555500;
+}
+.about-breifing .col-sm-6:nth-child(2) {
+    background: #555500;
+}
+.about-breifing .col-sm-6:nth-child(3) {
+    background: #555500;
+}
+.about-breifing .col-sm-6:nth-child(4) {
+    background: #555500;
+}
+.item-no .count {
+    font-size: 6.25em;
+    font-weight: 300;
+    letter-spacing: -15px;
+}
+.about-breifing .item-icon {
+    font-size: 2.5em;
+    padding-top: 15px;
+}
+.about-breifing .count-number {
+    font-size: 1.56em;
+}
+.about-breifing .about-item {
+    font-size: .8125em;
+    text-transform: capitalize;
+}
+.about {
+    padding-top:5%;
+    clear: both;
+    
+}
+.about-name{
+    color:#17a78b;
+    padding-top:3%;
+    font-size:30px;
+}
+.description {
+    font-size: 22px;
+
+}
+.about-top .btn {
+    border: 2px solid #555500;
+}
+.about-top .btn:hover {
+    background: #555500;
+    color: #000000;
+}
+.progress {
+    background: #ffffff;
+    border-radius: 0px;
+    box-shadow: none;
+    ;
+    height: 30px;
+    margin-bottom: 15px;
+}
+.progress-bar {
+    background: #555500;
+    font-size: 13px;
+    line-height: 30px;
+    padding-left: 25px;
+    text-align: left;
+}
+.section-details{
+    padding-top:3%;
+   margin-bottom:30%;
+   font-size:24px;
+}
+.skill-name {
+    padding-right: 5px;
+}
+.about-bottom .section-padding {
+    display: inline-block;
+}
+.tab-image {
+    margin-left: -15px;
+}
+.about-work .description {
+    font-size: .8125em;
+    padding-right: 15%;
+    padding-bottom: 8px;
 }

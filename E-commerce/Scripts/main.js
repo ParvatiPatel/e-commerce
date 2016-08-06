@@ -85,4 +85,6 @@ jQuery(document).ready(function($){
         offset: 95
     })      
 });
-
+function showDiv() {
+    document.getElementById('welcomeDiv').style.display = "block";
+}
