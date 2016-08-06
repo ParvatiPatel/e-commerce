@@ -50,6 +50,7 @@ namespace E_commerce.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "IID,PDID,Name,Description,Price,ThumbUrl,OriginalUrl,Tag")] Item item)
         {
+            HttpPostedFileBase image = Request.Files["file"];
             if (ModelState.IsValid)
             {
                 db.Items.Add(item);
