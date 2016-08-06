@@ -70,7 +70,7 @@ File description : Index Page - Admin can do CRUD Operation on items from this p
                         @Html.DisplayFor(modelItem => item.Price)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.ThumbUrl)
+                        <img src="~/Assests/Uploads/Items/Thumbnails/@item.ThumbUrl" alt="@item.Name" class="thumb" />
                     </td>
 
                     <td>

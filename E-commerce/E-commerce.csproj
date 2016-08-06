@@ -199,6 +199,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608061821054_InitialCreate.cs" />
+    <Compile Include="Migrations\201608061821054_InitialCreate.Designer.cs">
+      <DependentUpon>201608061821054_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608061905389_InitialCreate1.cs" />
+    <Compile Include="Migrations\201608061905389_InitialCreate1.Designer.cs">
+      <DependentUpon>201608061905389_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\EcommerceModel.cs" />
@@ -224,6 +233,10 @@
     <Content Include="Assests\crossword.png" />
     <Content Include="Assests\Images\DSC_0332.jpg" />
     <Content Include="Assests\logo.png" />
+    <Content Include="Assests\Uploads\Products\Thumbnails\87567d90-cdd0-4eb6-a9d1-07ac2b344e67Hoverboard.jpg" />
+    <Content Include="Assests\Uploads\Products\Thumbnails\8f1377d6-c2fd-459f-8e2b-10b7f24bbf99hoverboard.png.jpeg" />
+    <Content Include="Assests\Uploads\Products\Thumbnails\994dae2c-ba62-415d-9aa6-debee0cee298Hoverboard.jpg" />
+    <Content Include="Assests\Uploads\Products\Thumbnails\9b4c9c32-dc2c-41cf-ae94-076cf01f0594hoverboard.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -318,6 +331,7 @@
     <Content Include="tsconfig.json" />
     <Content Include="Views\CheckoutController\AddressAndPayment.cshtml" />
     <Content Include="Views\CheckoutController\Complete.cshtml" />
+    <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -334,6 +348,14 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608061821054_InitialCreate.resx">
+      <DependentUpon>201608061821054_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608061905389_InitialCreate1.resx">
+      <DependentUpon>201608061905389_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

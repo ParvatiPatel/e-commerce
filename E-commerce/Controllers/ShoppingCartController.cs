@@ -76,6 +76,7 @@ namespace E_commerce.Controllers
             var cart = ShoppingCart.GetCart(this.HttpContext);
 
             ViewData["CartCount"] = cart.GetCount();
+            ViewData["CartTotal"] = cart.GetTotal();
             return PartialView("CartSummary");
         }
     }

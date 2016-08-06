@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using E_commerce.Models;
+using System.IO;
+using System.Drawing;
+using System.Web.Helpers;
 
 namespace E_commerce.Controllers
 {
@@ -46,16 +49,78 @@ namespace E_commerce.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PDId,Name,Description,ThumbUrl")] Product product)
+        public ActionResult Create([Bind(Include = "PDId,Name,Description")] Product product)
         {
-            if (ModelState.IsValid)
+            bool flag = db.Products.Any(i => i.Name == product.Name);
+            if (flag)
             {
-                db.Products.Add(product);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                ViewBag.alert = "Product already added!";
+                ViewBag.MenuId = new SelectList(db.Products, "MenuId", "Name");
+                return View();
             }
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        HttpPostedFileBase image = Request.Files["file"];
 
-            return View(product);
+                        if (image != null)
+                        {
+
+                            string fileExtention = Path.GetExtension(image.FileName);
+                            if (fileExtention == ".png" || fileExtention == ".jpeg" || fileExtention == ".gif" || fileExtention == ".jpg")
+                            {
+
+                                //Thumbnails file path
+                                string filePathThumbnail = "~/Assests/Uploads/Products/Thumbnails";
+                                bool flag2 = System.IO.Directory.Exists(Server.MapPath(filePathThumbnail));
+                                //check if directory exists or not
+                                if (!flag2)
+                                    System.IO.Directory.CreateDirectory(Server.MapPath(filePathThumbnail));
+                                //Save image to file
+
+                                string filename = image.FileName;
+                              
+                                filename = Guid.NewGuid() + filename;
+
+                                Image img = Image.FromStream(image.InputStream,true,true);
+                                int imgHeight = 250;
+                                int imgWidth = 200;
+
+                                Image thumb = img.GetThumbnailImage(imgWidth, imgHeight, () => false, IntPtr.Zero);
+
+                                string savedFileName = Path.Combine(Server.MapPath(filePathThumbnail), filename);
+                                //save image into folder
+                                thumb.Save(savedFileName);
+                                product.ThumbUrl = filename;
+
+
+                                db.Products.Add(product);
+                                db.SaveChanges();
+                                return RedirectToAction("Index");
+                            }
+                            else
+                            {
+                                return View(product);
+                            }
+
+
+
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+
+
+                }
+
+                return View(product);
+            }
         }
 
         // GET: Products/Edit/5
