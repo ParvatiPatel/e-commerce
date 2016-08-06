@@ -13,3 +13,4 @@
 /// <reference path="respond.matchmedia.addlistener.min.js" />
 /// <reference path="respond.min.js" />
 /// <reference path="script.slider.js" />
+/// <reference path="site.js" />
