@@ -17,8 +17,8 @@
     </div>
 </div> <!-- End Page title area -->
 <div class="col-md-offset-2 col-md-8">
-    @using (Html.BeginForm())
-    {
+  @using (Html.BeginForm("Create", "Items", FormMethod.Post, new { enctype = "multipart/form-data" }))
+  {
         @Html.AntiForgeryToken()
         <fieldset class="scheduler-border">
             <legend class="scheduler-border"> Add Item</legend>
