@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using SendGrid;
+using System.Net.Mail;
+using E_commerce.ViewModels;
 namespace E_commerce.Controllers
 {
     public class HomeController : Controller
