@@ -92,7 +92,11 @@ namespace E_commerce.Controllers
         // GET: Products/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
+            Product product = db.Products.Find(id);
+            db.Products.Remove(product);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+            /*if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -101,7 +105,7 @@ namespace E_commerce.Controllers
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(product);*/
         }
 
         // POST: Products/Delete/5

@@ -28,6 +28,7 @@ namespace E_commerce.Models
 
         [Required]
         [StringLength(100)]
+        [Display(Name ="Image")]
         public string ThumbUrl { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
