@@ -27,12 +27,12 @@ namespace E_commerce.Models
 
         public decimal Price { get; set; }
 
-        [Required]
+       
         [StringLength(100)]
         [Display(Name = "Product Image")]
         public string ThumbUrl { get; set; }
 
-        [Required]
+       
         [StringLength(100)]
         [Display(Name = "Product Image")]
         public string OriginalUrl { get; set; }

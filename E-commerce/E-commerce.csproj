@@ -186,6 +186,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Mail.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assests\banner\1.png" />
