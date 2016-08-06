@@ -45,7 +45,7 @@ namespace E_commerce.Controllers
                 myMessage.AddTo(mail.Email);
                 myMessage.From = new MailAddress("testwebritz@gmail.com", "Ritesh Patel");
                 myMessage.Subject = "Contact from Game Tracking";
-                myMessage.Text = " Hi " + mail.Name + "\n\n Thank you for visiting my Game Tracking\n\n Thank you. ";
+                myMessage.Text = " Hi " + mail.Name + "\n\n Thank you for visiting our e-commerce site.\n\n Thank you. ";
 
                 // Create a Web transport, using API Key
                 var transportWeb = new Web("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");
