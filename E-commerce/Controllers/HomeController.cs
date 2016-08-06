@@ -32,7 +32,7 @@ namespace E_commerce.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Contact([Bind(Include = "Name,Email,Phone,Message")] Mail mail)
+        /*public ActionResult Contact([Bind(Include = "Name,Email,Phone,Message")] Mail mail)
         {
             // Create the email object first, then add the properties.
             try
@@ -58,7 +58,7 @@ namespace E_commerce.Controllers
             ModelState.Clear();
             ViewBag.Message = "Thank you for your comment.";
             return View();
-        }
+        }*/
         public ActionResult AllProducts()
         {
             return View();
