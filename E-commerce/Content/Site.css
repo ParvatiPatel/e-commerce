@@ -1187,3 +1187,17 @@ padding:10px;
     height:100px;
     border-radius:5px;
 }
+.tthead{
+    background-color:#17a78b;
+    color:#FFF;
+    font-weight:bold;
+    padding:5px;
+}
+.map{
+    margin-top:15px;
+     width:100%;
+     overflow:hidden;
+     height:315px;
+     max-width:100%;
+      border: 1px groove #5a88ca !important;
+}
