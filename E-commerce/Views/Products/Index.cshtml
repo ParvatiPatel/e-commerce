@@ -10,42 +10,63 @@ File description : Index Page - Index page for admin to do CRUD operation on pro
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ThumbUrl)
-        </th>
-        <th></th>
-    </tr>
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Product List</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End Page title area -->
+<div class="col-md-offset-1 col-md-10">
+    <p>
+        <br/>
+        <a href="@Url.Action("Create")" class="btn button3" title="Add"><i class="fa fa-plus fa-lg"></i> Add</a>
+       
+    </p>
+    <table class="table table-hover">
+        <thead class="tthead">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ThumbUrl)
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td width="15%">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td  width="50%">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td  width="15%">
+                        @Html.DisplayFor(modelItem => item.ThumbUrl)
+                    </td>
+                    <td  width="20%">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ThumbUrl)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PDId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PDId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PDId })
-        </td>
-    </tr>
-}
+                        <a href="@Url.Action("Edit", new { id = item.PDId })" class="btn button2" title="Edit"><i class="fa fa-pencil fa-sm"></i></a>
 
-</table>
+                        <a href="@Url.Action("Delete", new { id = item.PDId })" class="btn button1" onclick="return confirm('Are you sure you wish to delete this article?');" title="Delete"><i class="fa fa-trash fa-sm"></i></a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+        
+    </table>
+</div>
+

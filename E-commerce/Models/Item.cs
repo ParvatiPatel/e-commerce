@@ -10,31 +10,36 @@ namespace E_commerce.Models
     public partial class Item
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+       // [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IID { get; set; }
-
+        [Display(Name ="Product Name")]
         public int PDID { get; set; }
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "Item Name")]
         public string Name { get; set; }
 
         [Column(TypeName = "text")]
         [Required]
+        [Display(Name = "Description")]
         public string Description { get; set; }
 
         public decimal Price { get; set; }
 
-        [Required]
+       
         [StringLength(100)]
+        [Display(Name = "Product Image")]
         public string ThumbUrl { get; set; }
 
-        [Required]
+       
         [StringLength(100)]
+        [Display(Name = "Product Image")]
         public string OriginalUrl { get; set; }
 
         [Required]
         [StringLength(10)]
+        [Display(Name = "Porm. Type")]
         public string Tag { get; set; }
 
         public virtual Product Product { get; set; }
