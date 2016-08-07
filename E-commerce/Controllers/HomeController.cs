@@ -101,5 +101,11 @@ ViewBag.Product = product.Name;
             List<Product> products = db.Products.ToList();
             return PartialView(products);
         }
+        [ChildActionOnly]
+        public ActionResult CategoryBar()
+        {
+            List<Product> products = db.Products.ToList();
+            return PartialView(products);
+        }
     }
 }

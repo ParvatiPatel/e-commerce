@@ -20,8 +20,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-              
-                </div>
+                @{ Html.RenderAction("CategoryBar", "Home");}
+            </div>
             <div class="col-md-8">
                 <div class="product-content-right">
 
@@ -29,7 +29,7 @@
                         <div class="col-sm-6">
                             <div class="product-images">
                                 <div class="product-main-img">
-                                    <img src="img/product-2.jpg" alt="">
+                                    <img src="~/Assests/Uploads/Items/Originals/@Model.ThumbUrl" alt="@Model.Name">
                                 </div>
                             </div>
                         </div>
@@ -37,20 +37,20 @@
                             <div class="product-inner">
                                 <h2 class="product-name">@Model.Name</h2>
                                 <div class="product-inner-price">
-                                  @if (Model.Tag == "sale")
-                                  {
-                                      double price = (double)Model.Price * 1.25;
-                                    <ins>$@Model.Price</ins> <del>$@price</del>
-                                  }
-                                  else
-                                  {
-                                    <ins>$@Model.Price</ins>
-                                  }
+                                    @if (Model.Tag == "sale")
+                                    {
+                                        double price = (double)Model.Price * 1.25;
+                                        <ins>$@Model.Price</ins> <del>$@price</del>
+                                    }
+                                    else
+                                    {
+                                        <ins>$@Model.Price</ins>
+                                    }
                                 </div>
 
                                 <div class="cart">
-                                    @Html.ActionLink("Add to cart", "AddToCart","ShoppingCart", new { id = Model.IID },new { @class = "add_to_cart_button" })
-                                 
+                                    @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.IID }, new { @class = "add_to_cart_button" })
+
                                 </div>
 
 
@@ -58,38 +58,18 @@
 
 
                             </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <h2>Product Description</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.</p>
-
-                            <p>Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
-                            </div>
-                        <div class="col-sm-6">
-                            <h2>Reviews</h2>
-                            <div class="submit-review">
-                                <p><label for="name">Name</label> <input name="name" type="text"></p>
-                                <p><label for="email">Email</label> <input name="email" type="email"></p>
-                                <div class="rating-chooser">
-                                    <p>Your rating</p>
-
-                                    <div class="rating-wrap-post">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                                <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
-                                <p><input type="submit" value="Submit"></p>
+                            <div>
+                                <br/>
+                                <h2>Product Description</h2>
+                                <p>@Model.Description</p>
                             </div>
                         </div>
-                          
-                        </div>
+                        
+
+                    </div>
 
 
-                
+
                 </div>
             </div>
 
@@ -97,69 +77,4 @@
         </div>
     </div>
 
-                <div>
-                    <h4>Item</h4>
-                    <hr />
-                    <dl class="dl-horizontal">
-                        <dt>
-                            @Html.DisplayNameFor(model => model.Product.Name)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.Product.Name)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.Name)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.Name)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.Description)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.Description)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.Price)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.Price)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.ThumbUrl)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.ThumbUrl)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.OriginalUrl)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.OriginalUrl)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.Tag)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.Tag)
-                        </dd>
-
-                    </dl>
-                </div>
-                <p>
-                    @Html.ActionLink("Edit", "Edit", new { id = Model.IID }) |
-                    @Html.ActionLink("Back to List", "Index")
-                </p>
+            

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<E_commerce.Models.Product>
+
+<div class="single-sidebar">
+    <h2 class="sidebar-title">Products</h2>
+@foreach (var item in Model)
+{
+    <div class="thubmnail-recent">
+        <img src="~/Assests/Uploads/Products/Thumbnails/@item.ThumbUrl" alt="@item.Name">
+        <h2><a href="@Url.Action("ItemList",new { id=item.PDId})">@item.Name</a></h2>
+      
+    </div>
+}
+   
+</div>
+
+

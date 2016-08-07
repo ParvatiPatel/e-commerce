@@ -232,6 +232,9 @@
     <Content Include="Assests\crossword.png" />
     <Content Include="Assests\Images\DSC_0332.jpg" />
     <Content Include="Assests\logo.png" />
+    <Content Include="Assests\Uploads\Items\Originals\b142e42a-0827-4046-aa6d-aa0b756f6c43Hoverboard.jpg" />
+    <Content Include="Assests\Uploads\Items\Thumbnails\21fc402d-4db8-4962-bbb3-faa7109fde58Hoverboard.jpg" />
+    <Content Include="Assests\Uploads\Items\Thumbnails\b142e42a-0827-4046-aa6d-aa0b756f6c43Hoverboard.jpg" />
     <Content Include="Assests\Uploads\Products\Thumbnails\87567d90-cdd0-4eb6-a9d1-07ac2b344e67Hoverboard.jpg" />
     <Content Include="Assests\Uploads\Products\Thumbnails\8f1377d6-c2fd-459f-8e2b-10b7f24bbf99hoverboard.png.jpeg" />
     <Content Include="Assests\Uploads\Products\Thumbnails\994dae2c-ba62-415d-9aa6-debee0cee298Hoverboard.jpg" />
@@ -336,6 +339,7 @@
     <Content Include="Views\Home\Category.cshtml" />
     <Content Include="Views\Home\ItemList.cshtml" />
     <Content Include="Views\Home\ItemDetails.cshtml" />
+    <Content Include="Views\Home\CategoryBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
