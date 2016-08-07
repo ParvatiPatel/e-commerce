@@ -57,26 +57,26 @@ File description : Index Page - Admin can do CRUD Operation on items from this p
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    <td width="10%">
                         @Html.DisplayFor(modelItem => item.Product.Name)
                     </td>
-                    <td>
+                    <td  width="10%">
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
-                    <td>
+                    <td width="35%">
                         @Html.DisplayFor(modelItem => item.Description)
                     </td>
-                    <td>
+                    <td width="10%">
                         @Html.DisplayFor(modelItem => item.Price)
                     </td>
-                    <td>
+                    <td width="10%">
                         <img src="~/Assests/Uploads/Items/Thumbnails/@item.ThumbUrl" alt="@item.Name" class="thumb" />
                     </td>
 
-                    <td>
+                    <td width="10%">
                         @Html.DisplayFor(modelItem => item.Tag)
                     </td>
-                    <td>
+                    <td width="15%">
 
                         <a href="@Url.Action("Edit", new { id = item.IID })" class="btn button2" title="Edit"><i class="fa fa-pencil fa-sm"></i></a>
 

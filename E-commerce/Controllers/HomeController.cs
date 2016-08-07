@@ -6,11 +6,12 @@ using System.Web.Mvc;
 using SendGrid;
 using System.Net.Mail;
 using E_commerce.ViewModels;
+using E_commerce.Models;
 namespace E_commerce.Controllers
 {
     public class HomeController : Controller
     {
-        
+        EcommerceModel db = new EcommerceModel();
         public ActionResult Index()
         {
             return View();
@@ -64,6 +65,12 @@ namespace E_commerce.Controllers
         public ActionResult AllProducts()
         {
             return View();
+        }
+        [ChildActionOnly]
+        public ActionResult Category()
+        {
+            List<Product> products = db.Products.ToList();
+            return PartialView(products);
         }
     }
 }

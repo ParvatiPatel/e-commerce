@@ -367,9 +367,9 @@ z-index: 999;}
 .promo4 { background:#4abebd;}
 .section-title {
 
-  font-family:'Bradley Hand ITC';
-  font-style:oblique;
-  font-size: 50px;
+  //font-family:'Bradley Hand ITC';
+ // font-style:oblique;
+  font-size: 30px;
   margin-bottom: 50px;
   text-align: center;
 }

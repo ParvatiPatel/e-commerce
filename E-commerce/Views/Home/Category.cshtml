@@ -1,0 +1,27 @@
+﻿@using E_commerce.Models
+@model IEnumerable<Product>
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <h2 class="section-title">Latest Products</h2>
+    <div class="container">
+        <div class="row">
+@foreach (var item in Model)
+{
+            <div class="col-md-3">
+                <div class="single-shop-product">
+                    <div class="product-upper">
+                        <img src="~/Assests/Uploads/Products/Thumbnails/@item.ThumbUrl" alt="@item.Name">
+                    </div>
+                    <h2><a href="">@item.Name</a></h2>
+                  
+
+                    </div>
+                  
+                </div>
+}
+            </div>
+        </div>
+    </div>
+       
+
+
