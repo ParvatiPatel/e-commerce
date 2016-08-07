@@ -21,36 +21,42 @@
     
     <div class="container">
         <div class="row">
-            @foreach (var item in Model)
+            <div class="col-md-3">
+                @{ Html.RenderAction("CategoryBar", "Home");}
+            </div>
+            <div class="col-md-7">
+                @foreach (var item in Model)
             {
-                <div class="col-md-3">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img src="~/Assests/Uploads/Items/Thumbnails/@item.ThumbUrl" alt="@item.Name">
-                        </div>
-                        <h2><a href="@Url.Action("ItemDetails",new { id=item.IID})">@item.Name</a></h2>
-                        <div class="product-carousel-price">
-                            @if (@item.Tag == "sale")
-                            {
-                                 double price = (double)item.Price * 1.25; 
-                                <ins>$@item.Price</ins> <del>$@price</del>
-                            }
-                            else
-                            {
-                                <ins>$@item.Price</ins>
-                            }
-                        </div>
+                    <div class="col-md-4">
+                        <div class="single-shop-product">
+                            <div class="product-upper">
+                                <img src="~/Assests/Uploads/Items/Thumbnails/@item.ThumbUrl" alt="@item.Name">
+                            </div>
+                            <h2><a href="@Url.Action("ItemDetails",new { id=item.IID})">@item.Name</a></h2>
+                            <div class="product-carousel-price">
+                                @if (@item.Tag == "sale")
+                                {
+                                    double price = (double)item.Price * 1.25;
+                                    <ins>$@item.Price</ins> <del>$@price</del>
+                                }
+                                else
+                                {
+                                    <ins>$@item.Price</ins>
+                                }
+                            </div>
 
-                        <div class="product-option-shop">
-                            @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = item.IID }, new { @class = "add_to_cart_button" })
+                            <div class="product-option-shop">
+                                @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = item.IID }, new { @class = "add_to_cart_button" })
 
+
+                            </div>
 
                         </div>
 
                     </div>
-
-                </div>
-            }
+                }
+            </div>
+           
         </div>
     </div>
 </div>
