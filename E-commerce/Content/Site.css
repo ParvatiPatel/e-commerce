@@ -367,9 +367,9 @@ z-index: 999;}
 .promo4 { background:#4abebd;}
 .section-title {
 
-  font-family:'Bradley Hand ITC';
-  font-style:oblique;
-  font-size: 50px;
+  //font-family:'Bradley Hand ITC';
+ // font-style:oblique;
+  font-size: 30px;
   margin-bottom: 50px;
   text-align: center;
 }
@@ -1149,7 +1149,11 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     margin-top: 15px;
 }
 
-.single-shop-product {margin-bottom: 50px}
+.single-shop-product {
+    margin-bottom: 50px;
+    background-color:lightgray;
+    padding:10px;
+}
 
 .pagination > li > a, .pagination > li > span {
   color: #5a88ca;
@@ -1186,4 +1190,27 @@ padding:10px;
     width:100%;
     height:100px;
     border-radius:5px;
+}
+.tthead{
+    background-color:#17a78b;
+    color:#FFF;
+    font-weight:bold;
+    padding:5px;
+}
+.map{
+    margin-top:15px;
+     width:100%;
+     overflow:hidden;
+     height:315px;
+     max-width:100%;
+      border: 1px groove #5a88ca !important;
+}
+.thumb{
+    width:100px;height:100px;
+}
+.divborder{
+   border: 1px groove #5a88ca !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin:15px;
+=======
 }

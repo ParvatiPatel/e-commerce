@@ -15,6 +15,10 @@ namespace E_commerce.Models
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<Product> Products { get; set; }
 
+        public virtual DbSet<Cart> Carts { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Item>()

@@ -26,7 +26,7 @@ namespace E_commerce.Models
         [Required]
         public string Description { get; set; }
 
-        [Required]
+       
         [StringLength(100)]
         [Display(Name ="Image")]
         public string ThumbUrl { get; set; }

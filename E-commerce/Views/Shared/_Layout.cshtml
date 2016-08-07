@@ -26,7 +26,7 @@ File description : Layout Page - to develop the header and footer on every page.
 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="cart.html">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                       @{Html.RenderAction("CartSummary", "ShoppingCart");}
                     </div>
                 </div>
             </div>
@@ -107,6 +107,7 @@ File description : Layout Page - to develop the header and footer on every page.
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/shoppingCart")
     @RenderSection("scripts", required: false)
 </body>
 </html>

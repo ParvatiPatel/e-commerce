@@ -1,0 +1,31 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-offset-2 col-md-8">
+    <div class="divborder">
+      @{
+          if (String.IsNullOrEmpty(ViewBag.errorMessage))
+          {
+            <h3 class="text-danger">An error occurred while processing your request.</h3>
+          }
+          else
+          {
+            <h3 class="text-danger">@ViewBag.errorMessage</h3>
+          }
+    }
+    </div>
+</div>
+
