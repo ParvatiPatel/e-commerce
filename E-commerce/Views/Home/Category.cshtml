@@ -12,7 +12,7 @@
                     <div class="product-upper">
                         <img src="~/Assests/Uploads/Products/Thumbnails/@item.ThumbUrl" alt="@item.Name">
                     </div>
-                    <h2><a href="">@item.Name</a></h2>
+                    <h2><a href="@Url.Action("ItemList",new { id=item.PDId})">@item.Name</a></h2>
                   
 
                     </div>

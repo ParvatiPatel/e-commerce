@@ -7,6 +7,8 @@ using SendGrid;
 using System.Net.Mail;
 using E_commerce.ViewModels;
 using E_commerce.Models;
+using System.Net;
+
 namespace E_commerce.Controllers
 {
     public class HomeController : Controller
@@ -62,9 +64,35 @@ namespace E_commerce.Controllers
             ViewBag.Message = "Thank you for your comment.";
             return View();
         }
-        public ActionResult AllProducts()
+        public ActionResult ItemList(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = db.Products.Find(id);
+            List<Item> items = db.Items.Include("Product").Where(p=>p.PDID==id).ToList();
+            if (items == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Product = product.Name;
+            return View(items);
+        }
+        public ActionResult ItemDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            
+            Item items = db.Items.Include("Product").SingleOrDefault(s=>s.IID==id);
+            if (items == null)
+            {
+                return HttpNotFound();
+            }
+           
+            return View(items);
         }
         [ChildActionOnly]
         public ActionResult Category()
