@@ -1,10 +1,102 @@
-﻿@model int
+﻿@model E_commerce.Models.Order
 @{
-    ViewBag.Title = "Checkout Complete";
+    ViewBag.Title = "Order Confirmed";
 }
-<h2>Checkout Complete</h2>
-<p>Thanks for your order! Your order number is: @Model</p>
-<p>
-    How about shopping for some more music in our
-    @Html.ActionLink("Home","Index", "Home")
-</p>
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Checkout Complete</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End Page title area -->
+<div class="col-md-offset-2 col-md-8">
+    <fieldset class="scheduler-border">
+        <legend class="scheduler-border">Order Confimed</legend>
+        <section id="loginForm">
+            <p>Thanks for your order! Your order number is: @Model.OrderId</p>
+            <p>Here is your shopping details:</p>
+            <div>
+                <h3> Your Shipping Details</h3>
+                <div class="col-md-2">
+                    <p>Name:</p>
+                    <p>Address:</p>
+                    <p>City:</p>
+                    <p>Email:</p>
+                </div>
+                <div class="col-md-4">
+                    <p>@Model.FirstName @Model.LastName</p>
+                    <p>@Model.Address</p>
+                    <p>@Model.City</p>
+                    <p>@Model.Email</p>
+                </div>
+            </div>
+            <table cellspacing="0" class="shop_table cart">
+                <thead>
+                    <tr>
+                        <th class="product-name">Product</th>
+                        <th class="product-price">Product Image</th>
+                        <th class="product-price">Unit</th>
+                        <th class="product-quantity">Quantity</th>
+                        <th class="product-subtotal">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+    @foreach (var item in Model.OrderDetails)
+            {
+        <tr>
+            <td class="product-name">
+                @item.Item.Name
+            </td>
+            <td class="product-thumbnail">
+            <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="~/Assests/Uploads/Items/Thumbnails/@item.Item.ThumbUrl"></a>
+            </td>
+            <td class="product-price">
+                <span class="amount">@item.Quantity</span>
+            </td>
+            <td class="product-price">
+            <span class="amount">@item.Item.Price</span>
+            </td>
+            <td class="product-price">
+            @item.UnitPrice   
+            </td>
+                        
+            </tr>
+                                <p>
+                                    Item Name : @item.Item.Name <br />
+                                    Item Price : @item.Item.Price <br />
+
+
+                                    How about shopping for some more in our
+                                    @Html.ActionLink("Home", "Index", "Home")
+                                </p>
+                    }
+                    </tbody>
+                </table>
+
+                    <div class="col-md-12">
+                        <h3>Your Order List: </h3>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    Order Number
+                                </div>
+                                <div class="col-md-2">
+                                    Product Image
+                                </div>
+                                <div class="col-md-2">
+                                    Product Name
+                                </div>
+                                <div class="col-md-2">
+                                    Product Price
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+        </section>
+        </fieldset>
+    </div>

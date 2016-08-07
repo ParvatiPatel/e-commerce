@@ -65,10 +65,11 @@ namespace E_commerce.Controllers
             bool isValid = storeDB.Orders.Any(
                 o => o.OrderId == id &&
                 o.Username == User.Identity.Name);
-
+            OrderDetail Details = storeDB.OrderDetails.Find(id);
+            Order Detail = storeDB.Orders.Include("OrderDetails").Single(o => o.OrderId == id);
             if (isValid)
             {
-                return View(id);
+                return View(Detail);
             }
             else
             {

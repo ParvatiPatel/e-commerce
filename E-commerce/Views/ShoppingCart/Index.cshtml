@@ -3,6 +3,125 @@
     ViewBag.Title = "Shopping Cart";
 }
 
+
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Shopping Cart</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Page title area -->
+
+
+    <div class="single-product-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    
+                    </div>
+
+                <div class="col-md-8">
+                    <div class="product-content-right">
+                        <div class="woocommerce">
+                            <form method="post" action="#">
+                                <table cellspacing="0" class="shop_table cart">
+                                    <thead>
+                                        <tr>
+                                            <th class="product-remove">&nbsp;</th>
+                                            <th class="product-thumbnail">&nbsp;</th>
+                                            <th class="product-name">Product</th>
+                                            <th class="product-price">Price</th>
+                                            <th class="product-quantity">Quantity</th>
+                                            <th class="product-subtotal">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                        @foreach (var item in
+                            Model.CartItems)
+                        {
+                                        <tr class="cart_item">
+                                            <td class="product-remove">
+                                                <a href="@Url.Action("Index","ShoppingCart")" class="RemoveLink"
+                                                   data-id="@item.RecordId"> x 
+                                                </a>
+                                            </td>
+
+                                            <td class="product-thumbnail">
+                                                <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="~/Assests/Uploads/Items/Thumbnails/@item.Item.ThumbUrl"></a>
+                                            </td>
+
+                                            <td class="product-name">
+                                               @Html.ActionLink(item.Item.Name, "Details","Store", new { id = item.IID }, null)
+                                            </td>
+
+                                            <td class="product-price">
+                                                <span class="amount">@item.Item.Price</span>
+                                            </td>
+
+                                            <td class="product-quantity">
+                                                <div class="quantity buttons_added">
+                                                <p> </p>
+                                                    <a href="@Url.Action("AddToCart","ShoppingCart", new { id = item.IID })" class="btn button3" >+</a>                                                </div>
+                                            </td>
+
+                                            <td class="product-subtotal">
+                                                <span class="amount">@Model.CartTotal</span>
+                                            </td>
+                                        </tr>
+                        }
+                                    </tbody>
+                                </table>
+                            </form>
+
+                            <div class="cart-collaterals">
+                                <div class="promo-area col-md-3 col-sm-6">
+                                    <div class="single-promo promo1">
+                                        <i class="fa fa-refresh"></i>
+                                        <p>30 Days return</p>
+                                    </div>
+                                </div>
+                                <div class="promo-area col-md-3 col-sm-6">
+                                    <div class="single-promo promo2">
+                                        <i class="fa fa-truck"></i>
+                                        <p>Free shipping</p>
+                                    </div>
+                                </div>
+                                <div class="cart_totals ">
+                                    <h2>Cart Totals</h2>
+
+                                    <table cellspacing="0">
+                                        <tbody>
+                                            <tr class="order-total">
+                                                <th>Order Total</th>
+                                                <td><strong><span class="amount">@Model.CartTotal</span></strong> </td>
+                                            </tr>
+                                            <tr>
+                                                <th></th>
+                                                <td class="actions" align="right">
+                                                    <a href="@Url.Action("AddressAndPayment","CheckoutController")" class="btn button3">Checkout</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 <h3>
     <em>Review</em> your cart:
 </h3>
