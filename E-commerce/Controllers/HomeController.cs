@@ -107,5 +107,11 @@ ViewBag.Product = product.Name;
             List<Product> products = db.Products.ToList();
             return PartialView(products);
         }
+        [ChildActionOnly]
+        public ActionResult Search()
+        {
+           
+            return PartialView();
+        }
     }
 }
