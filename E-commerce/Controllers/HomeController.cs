@@ -37,12 +37,12 @@ namespace E_commerce.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        /*public ActionResult Contact([Bind(Include = "Name,Email,Phone,Message")] Mail mail)
+        public ActionResult Contact([Bind(Include = "Name,Email,Phone,Message")] Mail mail)
         {
             // Create the email object first, then add the properties.
             try
             {
-            
+
 
                 SendGridMessage myMessage = new SendGridMessage();
                 myMessage.AddTo(mail.Email);
@@ -57,26 +57,22 @@ namespace E_commerce.Controllers
                 transportWeb.DeliverAsync(myMessage);
                 // NOTE: If your developing a Console Application, use the following so that the API call has time to complete
                 // transportWeb.DeliverAsync(myMessage).Wait();
-               
+
             }
             catch (Exception) { }
             ModelState.Clear();
             ViewBag.Message = "Thank you for your comment.";
             return View();
-<<<<<<< HEAD
+
         }
         public ActionResult ItemList(int? id)
-=======
-        }*/
-        public ActionResult AllProducts()
->>>>>>> refs/remotes/origin/pr/15
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Product product = db.Products.Find(id);
-            List<Item> items = db.Items.Include("Product").Where(p=>p.PDID==id).ToList();
+            List<Item> items = db.Items.Include("Product").Where(p => p.PDID == id).ToList();
             if (items == null)
             {
                 return HttpNotFound();
@@ -84,19 +80,20 @@ namespace E_commerce.Controllers
             ViewBag.Product = product.Name;
             return View(items);
         }
+
         public ActionResult ItemDetails(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            
-            Item items = db.Items.Include("Product").SingleOrDefault(s=>s.IID==id);
+
+            Item items = db.Items.Include("Product").SingleOrDefault(s => s.IID == id);
             if (items == null)
             {
                 return HttpNotFound();
             }
-           
+
             return View(items);
         }
         [ChildActionOnly]
