@@ -42,7 +42,7 @@ namespace E_commerce.Controllers
             // Create the email object first, then add the properties.
             try
             {
-
+            
 
                 SendGridMessage myMessage = new SendGridMessage();
                 myMessage.AddTo(mail.Email);
@@ -57,7 +57,7 @@ namespace E_commerce.Controllers
                 transportWeb.DeliverAsync(myMessage);
                 // NOTE: If your developing a Console Application, use the following so that the API call has time to complete
                 // transportWeb.DeliverAsync(myMessage).Wait();
-
+               
             }
             catch (Exception) { }
             ModelState.Clear();
@@ -65,35 +65,34 @@ namespace E_commerce.Controllers
             return View();
 
         }
-        public ActionResult ItemList(int? id)
-        {
-            if (id == null)
+        public ActionResult ItemList(int? id) { 
+             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Product product = db.Products.Find(id);
-            List<Item> items = db.Items.Include("Product").Where(p => p.PDID == id).ToList();
+    }
+    Product product = db.Products.Find(id);
+    List<Item> items = db.Items.Include("Product").Where(p => p.PDID == id).ToList();
             if (items == null)
             {
                 return HttpNotFound();
-            }
-            ViewBag.Product = product.Name;
+}
+ViewBag.Product = product.Name;
             return View(items);
         }
-
+     
         public ActionResult ItemDetails(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            Item items = db.Items.Include("Product").SingleOrDefault(s => s.IID == id);
+            
+            Item items = db.Items.Include("Product").SingleOrDefault(s=>s.IID==id);
             if (items == null)
             {
                 return HttpNotFound();
             }
-
+           
             return View(items);
         }
         [ChildActionOnly]
