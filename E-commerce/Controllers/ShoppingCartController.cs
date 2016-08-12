@@ -5,6 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using E_commerce.Models;
 using E_commerce.ViewModels;
+/**
+ * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+ * Name: ShoppingCartController.cs
+ * Description: This file mainly to maintain cart in our website.
+ */
 namespace E_commerce.Controllers
 {
     public class ShoppingCartController : Controller

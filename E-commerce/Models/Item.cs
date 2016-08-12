@@ -1,5 +1,10 @@
 namespace E_commerce.Models
 {
+ /**
+ * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+ * Name: Item.cs
+ * Description: This file is for every item.
+ */
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;

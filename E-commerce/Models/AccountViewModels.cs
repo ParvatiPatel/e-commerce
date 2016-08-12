@@ -1,6 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
+/**
+ * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+ * Name: AccountViewModels.cs
+ * Description: This file mainly handles the views of login and resetting password.
+ */
 namespace E_commerce.Models
 {
     public class ExternalLoginConfirmationViewModel

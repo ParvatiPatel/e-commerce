@@ -4,6 +4,11 @@ namespace E_commerce.Models
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+ /**
+ * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+ * Name: Ecommerce.cs
+ * Description: This file holds all the record of the store products items, carts, order and orderdetails.
+ */
 
     public partial class EcommerceModel : DbContext
     {

@@ -8,6 +8,11 @@ using System.Web.Mvc;
 
 namespace E_commerce.Models
 {
+ /**
+ * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+ * Name: order.cs
+ * Description: This file for the order which is made by the user.
+ */
     [Bind(Exclude = "OrderId")]
     public class Order
     {
