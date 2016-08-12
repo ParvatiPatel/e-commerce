@@ -69,7 +69,7 @@ namespace E_commerce.Controllers
             return View();
 
         }
-        public ActionResult ItemList(int? id) { 
+        public ActionResult ItemList(int id=11) { 
              if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

@@ -4,11 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using E_commerce.Models;
+using Rotativa;
 /**
- * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
- * Name: CheckoutControllerController.cs
- * Description: This file mainly controls the checkout activity of the user it add the item to cart, remove from cart and finally gives option for checkout.
- */
+* Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+* Name: CheckoutControllerController.cs
+* Description: This file mainly controls the checkout activity of the user it add the item to cart, remove from cart and finally gives option for checkout.
+*/
 namespace E_commerce.Controllers
 {
     [Authorize]
@@ -66,12 +67,12 @@ namespace E_commerce.Controllers
 
         //
         // GET: /Checkout/Complete
-        public ActionResult Complete(int id)
+        [AllowAnonymous]
+        public ActionResult Complete(int id=9)
         {
             // Validate customer owns this order
             bool isValid = storeDB.Orders.Any(
-                o => o.OrderId == id &&
-                o.Username == User.Identity.Name);
+                o => o.OrderId == id );
             OrderDetail Details = storeDB.OrderDetails.Find(id);
             
             Order Detail = storeDB.Orders.Include("OrderDetails").Single(o => o.OrderId == id);
@@ -85,14 +86,13 @@ namespace E_commerce.Controllers
             }
         }
 
-
+        [AllowAnonymous]
         [ChildActionOnly]
         public ActionResult CompleteCheckout(int id)
         {
             // Validate customer owns this order
             bool isValid = storeDB.Orders.Any(
-                o => o.OrderId == id &&
-                o.Username == User.Identity.Name);
+                o => o.OrderId == id);
             OrderDetail Details = storeDB.OrderDetails.Find(id);
             Order Detail = storeDB.Orders.Include("OrderDetails").Single(o => o.OrderId == id);
             if (isValid)
@@ -104,11 +104,14 @@ namespace E_commerce.Controllers
                 return View("Error");
             }
         }
-        [ChildActionOnly]
-        public ActionResult ExportToPDF()
+        [AllowAnonymous]
+        public ActionResult ExportToPDF(int id)
         {
 
-            return PartialView();
+            return new ActionAsPdf("Complete", id)
+            {
+                FileName = Server.MapPath("~/Content/Invoice.pdf")
+            };
         }
     }
 

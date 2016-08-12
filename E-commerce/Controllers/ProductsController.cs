@@ -17,6 +17,7 @@ using System.Web.Helpers;
  */
 namespace E_commerce.Controllers
 {
+    [Authorize]
     public class ProductsController : Controller
     {
         private EcommerceModel db = new EcommerceModel();

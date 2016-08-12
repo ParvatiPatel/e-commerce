@@ -39,6 +39,10 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.6.4\lib\net40\Rotativa.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SendGrid.CSharp.HTTP.Client, Version=3.0.0.0, Culture=neutral, PublicKeyToken=79219bf4e5ecaaca, processorArchitecture=MSIL">
       <HintPath>..\packages\SendGrid.CSharp.HTTP.Client.3.0.0\lib\SendGrid.CSharp.HTTP.Client.dll</HintPath>
       <Private>True</Private>
@@ -107,8 +111,10 @@
     <Content Include="css\font-awesome.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Browsers\qt.browser" />
     <None Include="fonts\fontawesome-webfont.eot" />
     <None Include="fonts\fontawesome-webfont.ttf" />
     <None Include="fonts\fontawesome-webfont.woff" />
