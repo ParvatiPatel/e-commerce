@@ -1,0 +1,74 @@
+﻿@model E_commerce.Models.Order
+<section id="loginForm">
+    <div class="col-md-10">
+        <h1>Ecommerce</h1>
+    </div>
+    <div class="col-md-2">
+        <h1>Invoice</h1>
+    </div>
+    <hr />
+    <div>
+        <h3> Your Shipping Details</h3>
+        <div class="col-md-2">
+            <p>Name:</p>
+            <p>Address:</p>
+            <p>City:</p>
+            <p>Email:</p>
+        </div>
+        <div class="col-md-4">
+            <p>@Model.FirstName @Model.LastName</p>
+            <p>@Model.Address</p>
+            <p>@Model.City</p>
+            <p>@Model.Email</p>
+        </div>
+        <div class="col-md-2">
+            <p>Invoice Number:</p>
+            <p>Order Date:</p>
+            <p>Total Amount:</p>
+            <p>Phone Number:</p>
+        </div>
+        <div class="col-md-4">
+            <p>@Model.OrderId</p>
+            <p>@Model.OrderDate</p>
+            <p>@Model.Total</p>
+            <p>@Model.Phone</p>
+        </div>
+    </div>
+    <table cellspacing="0" class="shop_table cart">
+        <thead>
+            <tr>
+                <th class="product-name">Product</th>
+                <th class="product-price">Product Image</th>
+                <th class="product-price">Unit</th>
+                <th class="product-quantity">Quantity</th>
+                <th class="product-subtotal">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderDetails)
+            {
+                <tr>
+                    <td class="product-name">
+                        @item.Item.Name
+                    </td>
+                    <td class="product-thumbnail">
+                        <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="~/Assests/Uploads/Items/Thumbnails/@item.Item.ThumbUrl"></a>
+                    </td>
+                    <td class="product-price">
+                        <span class="amount">@item.Quantity</span>
+                    </td>
+                    <td class="product-price">
+                        <span class="amount">@item.Item.Price</span>
+                    </td>
+                    <td class="product-price">
+                        @item.UnitPrice
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p align="center">Thank for choosing Ecommerce for your shopping.</p>
+</section>
+

@@ -5,11 +5,17 @@ using System.Web;
 using System.Web.Mvc;
 using E_commerce.Models;
 using E_commerce.ViewModels;
+/**
+ * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+ * Name: ShoppingCartController.cs
+ * Description: This file mainly to maintain cart in our website.
+ */
 namespace E_commerce.Controllers
 {
     public class ShoppingCartController : Controller
     {
         EcommerceModel storeDB = new EcommerceModel();
+
         //
         // GET: /ShoppingCart/
         public ActionResult Index()
@@ -66,7 +72,9 @@ namespace E_commerce.Controllers
                 ItemCount = itemCount,
                 DeleteId = id
             };
+            ViewBag.Total = cart.GetTotal();
             return Json(results);
+
         }
         //
         // GET: /ShoppingCart/CartSummary
@@ -77,6 +85,7 @@ namespace E_commerce.Controllers
 
             ViewData["CartCount"] = cart.GetCount();
             ViewData["CartTotal"] = cart.GetTotal();
+            
             return PartialView("CartSummary");
         }
     }

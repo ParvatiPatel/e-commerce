@@ -8,7 +8,11 @@ using System.Net.Mail;
 using E_commerce.ViewModels;
 using E_commerce.Models;
 using System.Net;
-
+/**
+ * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+ * Name: HomeController.cs
+ * Description: This file mainly controls the pages of product to display add to cart, etc role for all non-logged in users.
+ */
 namespace E_commerce.Controllers
 {
     public class HomeController : Controller

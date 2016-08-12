@@ -6,6 +6,11 @@ using System.Web.Mvc;
 
 namespace E_commerce.Models
 {
+/**
+ * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+ * Name: ShoppingCart.cs
+ * Description: This file is the shopping cart for a user
+ */
     public class ShoppingCart
     {
         EcommerceModel storeDB = new EcommerceModel();

@@ -1,5 +1,10 @@
 namespace E_commerce.Models
 {
+/**
+ * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+ * Name: Product.cs
+ * Description: This file is used to make a category for the product.
+ */
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;

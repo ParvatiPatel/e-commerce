@@ -10,7 +10,11 @@ using E_commerce.Models;
 using System.IO;
 using System.Drawing;
 using System.Web.Helpers;
-
+/**
+ * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+ * Name: ProductsController.cs
+ * Description: This file mainly to add, update, delete products type by admin users.
+ */
 namespace E_commerce.Controllers
 {
     public class ProductsController : Controller

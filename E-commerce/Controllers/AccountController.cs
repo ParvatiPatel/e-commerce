@@ -11,6 +11,11 @@ using Microsoft.Owin.Security;
 using E_commerce.Models;
 using static E_commerce.EmailService;
 
+/**
+ * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+ * Name: AccountController.cs
+ * Description: This file mainly controls the account role for all the users.
+ */
 namespace E_commerce.Controllers
 {
     [Authorize]

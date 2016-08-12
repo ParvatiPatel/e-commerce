@@ -10,7 +10,11 @@ using E_commerce.Models;
 using System.IO;
 using System.Web.Helpers;
 using System.Drawing;
-
+/**
+ * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+ * Name: ItemsController.cs
+ * Description: This file is for admin user who can add, edit and udpdate item on our site.
+ */
 namespace E_commerce.Controllers
 {
     public class ItemsController : Controller

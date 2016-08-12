@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+/**
+ * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+ * Name: orderDetail.cs
+ * Description: This file OrderDetails for displaying all the details in the complete page.
+ */
 namespace E_commerce.Models
 {
     public class OrderDetail

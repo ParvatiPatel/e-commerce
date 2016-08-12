@@ -4,18 +4,25 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using E_commerce.Models;
+/**
+ * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
+ * Name: CheckoutControllerController.cs
+ * Description: This file mainly controls the checkout activity of the user it add the item to cart, remove from cart and finally gives option for checkout.
+ */
 namespace E_commerce.Controllers
 {
     [Authorize]
     public class CheckoutControllerController : Controller
     {
         EcommerceModel storeDB = new EcommerceModel();
-        const string PromoCode = "FREE";
+        const string PromoCode = "FREE";// the checkout is only successful if we enter free in promo code
         
         //
          // GET: /Checkout/AddressAndPayment
         public ActionResult AddressAndPayment()
         {
+            var cart = ShoppingCart.GetCart(this.HttpContext);
+            ViewBag.Total = cart.GetTotal();
             return View();
         }
 
@@ -66,6 +73,7 @@ namespace E_commerce.Controllers
                 o => o.OrderId == id &&
                 o.Username == User.Identity.Name);
             OrderDetail Details = storeDB.OrderDetails.Find(id);
+            
             Order Detail = storeDB.Orders.Include("OrderDetails").Single(o => o.OrderId == id);
             if (isValid)
             {
@@ -75,6 +83,32 @@ namespace E_commerce.Controllers
             {
                 return View("Error");
             }
+        }
+
+
+        [ChildActionOnly]
+        public ActionResult CompleteCheckout(int id)
+        {
+            // Validate customer owns this order
+            bool isValid = storeDB.Orders.Any(
+                o => o.OrderId == id &&
+                o.Username == User.Identity.Name);
+            OrderDetail Details = storeDB.OrderDetails.Find(id);
+            Order Detail = storeDB.Orders.Include("OrderDetails").Single(o => o.OrderId == id);
+            if (isValid)
+            {
+                return PartialView(Detail);
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+        [ChildActionOnly]
+        public ActionResult ExportToPDF()
+        {
+
+            return PartialView();
         }
     }
 
