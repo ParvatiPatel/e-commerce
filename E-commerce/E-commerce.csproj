@@ -339,6 +339,7 @@
     <Content Include="Views\Home\Category.cshtml" />
     <Content Include="Views\Home\ItemList.cshtml" />
     <Content Include="Views\Home\ItemDetails.cshtml" />
+    <Content Include="Views\CheckoutController\CompleteCheckout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

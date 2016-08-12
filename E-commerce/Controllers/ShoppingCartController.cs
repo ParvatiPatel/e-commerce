@@ -10,6 +10,7 @@ namespace E_commerce.Controllers
     public class ShoppingCartController : Controller
     {
         EcommerceModel storeDB = new EcommerceModel();
+
         //
         // GET: /ShoppingCart/
         public ActionResult Index()
@@ -66,7 +67,9 @@ namespace E_commerce.Controllers
                 ItemCount = itemCount,
                 DeleteId = id
             };
+            ViewBag.Total = cart.GetTotal();
             return Json(results);
+
         }
         //
         // GET: /ShoppingCart/CartSummary
@@ -77,6 +80,7 @@ namespace E_commerce.Controllers
 
             ViewData["CartCount"] = cart.GetCount();
             ViewData["CartTotal"] = cart.GetTotal();
+            
             return PartialView("CartSummary");
         }
     }
