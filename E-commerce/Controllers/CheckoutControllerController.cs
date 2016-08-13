@@ -67,7 +67,7 @@ namespace E_commerce.Controllers
 
         //
         // GET: /Checkout/Complete
-        [AllowAnonymous]
+      
         public ActionResult Complete(int id=9)
         {
             // Validate customer owns this order
@@ -86,7 +86,7 @@ namespace E_commerce.Controllers
             }
         }
 
-        [AllowAnonymous]
+       
         [ChildActionOnly]
         public ActionResult CompleteCheckout(int id)
         {
@@ -104,7 +104,7 @@ namespace E_commerce.Controllers
                 return View("Error");
             }
         }
-        [AllowAnonymous]
+        
         public ActionResult ExportToPDF(int id)
         {
 
