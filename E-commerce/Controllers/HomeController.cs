@@ -117,5 +117,21 @@ ViewBag.Product = product.Name;
            
             return PartialView();
         }
+        [ChildActionOnly]
+        public ActionResult ItemListBar(int id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = db.Products.Find(id);
+            List<Item> items = db.Items.Include("Product").Where(p => p.PDID == id).OrderByDescending(o=>o.IID).Take(3).ToList();
+            if (items == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Product = product.Name;
+            return PartialView(items);
+        }
     }
 }

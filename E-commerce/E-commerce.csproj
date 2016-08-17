@@ -348,6 +348,8 @@
     <Content Include="Views\Home\CategoryBar.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\CheckoutController\CompleteCheckout.cshtml" />
+    <Content Include="Views\CheckoutController\OrderList.cshtml" />
+    <Content Include="Views\Home\ItemListBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

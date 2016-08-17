@@ -68,7 +68,7 @@ namespace E_commerce.Controllers
         //
         // GET: /Checkout/Complete
       
-        public ActionResult Complete(int id=9)
+        public ActionResult Complete(int id)
         {
             // Validate customer owns this order
             bool isValid = storeDB.Orders.Any(
@@ -113,6 +113,14 @@ namespace E_commerce.Controllers
                 FileName = Server.MapPath("~/Content/Invoice.pdf")
             };
         }
+
+        public ActionResult OrderList()
+        {
+            List<Order> ordelist = storeDB.Orders.Where(o => o.Username == User.Identity.Name).ToList();
+
+            return View(ordelist);
+        }
+
     }
 
 }

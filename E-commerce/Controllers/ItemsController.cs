@@ -17,7 +17,7 @@ using System.Drawing;
  */
 namespace E_commerce.Controllers
 {
-    [Authorize]
+    [Authorize(Users ="admin@admin.com")]
     public class ItemsController : Controller
     {
         private EcommerceModel db = new EcommerceModel();

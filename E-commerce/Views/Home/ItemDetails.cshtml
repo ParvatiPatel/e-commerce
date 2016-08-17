@@ -70,7 +70,10 @@ File description : Item Page - Description of a specific item.
                                 <p>@Model.Description</p>
                             </div>
                         </div>
-                        
+                        <div class="col-sm-12">
+                            <br/>
+                            @{ Html.RenderAction("ItemListBar", "Home",new { id=Model.PDID});}
+                        </div>
 
                     </div>
 
@@ -78,7 +81,7 @@ File description : Item Page - Description of a specific item.
 
                 </div>
             </div>
-
+            
             </div>
         </div>
     </div>
