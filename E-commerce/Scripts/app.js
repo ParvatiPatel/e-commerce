@@ -22,11 +22,17 @@
         }
     });
 })();
-$(function () {
-    $("div[data-navigation='true']").find("li").children("a").each(function () {
-        if ($(this).attr("href") === window.location.pathname) {
-            $(this).parent().addClass("active");
-        }
+var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+$('#cmd').click(function () {
+    doc.fromHTML($('#content').html(), 15, 15, {
+        'width': 170,
+        'elementHandlers': specialElementHandlers
     });
+    doc.save('sample-file.pdf');
 });
 //# sourceMappingURL=app.js.map

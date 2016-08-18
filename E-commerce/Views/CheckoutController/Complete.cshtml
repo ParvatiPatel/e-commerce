@@ -15,10 +15,9 @@
 </div> <!-- End Page title area -->
 <div class="col-md-offset-2 col-md-8">
     <br/>
-    <a href="@Url.Action("ExportToPDF","CheckoutController",new { id = Model.OrderId })" class="btn button3" align="right">Export to PDF</a>
 
     <fieldset class="scheduler-border">
         <legend class="scheduler-border">Invoice Detail</legend>
-        @{Html.RenderAction("CompleteCheckout", "CheckoutController", new { id=Model.OrderId});}
+        @{Html.RenderAction("CompleteCheckout", "CheckoutController", new { id = Model.OrderId });}
         </fieldset>
     </div>

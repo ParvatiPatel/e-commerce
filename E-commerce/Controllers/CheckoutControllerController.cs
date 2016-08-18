@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using E_commerce.Models;
 using Rotativa;
+using ReportViewerForMvc;
+using System.Web.Mvc.Html;
 /**
 * Authors: Rutvik Patel, Ritesh Patel, Himanshu Patel and  Parvati Patel
 * Name: CheckoutControllerController.cs
@@ -34,7 +36,7 @@ namespace E_commerce.Controllers
         {
             var order = new Order();
             TryUpdateModel(order);
-
+            values["PromoCode"] = "Free";
             try
             {
                 if (string.Equals(values["PromoCode"], PromoCode,
@@ -67,7 +69,7 @@ namespace E_commerce.Controllers
 
         //
         // GET: /Checkout/Complete
-      
+        [AllowAnonymous]
         public ActionResult Complete(int id)
         {
             // Validate customer owns this order
@@ -85,8 +87,6 @@ namespace E_commerce.Controllers
                 return View("Error");
             }
         }
-
-       
         [ChildActionOnly]
         public ActionResult CompleteCheckout(int id)
         {
@@ -104,11 +104,21 @@ namespace E_commerce.Controllers
                 return View("Error");
             }
         }
-        
+        public Order CompletevCheckout(int id=9)
+        {
+            // Validate customer owns this order
+            bool isValid = storeDB.Orders.Any(
+                o => o.OrderId == id);
+            OrderDetail Details = storeDB.OrderDetails.Find(id);
+            Order Detail = storeDB.Orders.Include("OrderDetails").Single(o => o.OrderId == id);
+          
+                return Detail;
+          
+        }
         public ActionResult ExportToPDF(int id)
         {
 
-            return new ActionAsPdf("Complete", id)
+            return new Rotativa.ActionAsPdf("Complete",new { id = id})
             {
                 FileName = Server.MapPath("~/Content/Invoice.pdf")
             };
