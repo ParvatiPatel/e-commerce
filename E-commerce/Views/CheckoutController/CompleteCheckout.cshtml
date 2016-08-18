@@ -55,14 +55,15 @@
                         <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="~/Assests/Uploads/Items/Thumbnails/@item.Item.ThumbUrl"></a>
                     </td>
                     <td class="product-price">
+                        @item.UnitPrice
+                    </td>
+                    <td class="product-price">
                         <span class="amount">@item.Quantity</span>
                     </td>
                     <td class="product-price">
-                        <span class="amount">@item.Item.Price</span>
+                        <span class="amount">@(item.UnitPrice*item.Quantity)</span>
                     </td>
-                    <td class="product-price">
-                        @item.UnitPrice
-                    </td>
+                   
 
                 </tr>
             }

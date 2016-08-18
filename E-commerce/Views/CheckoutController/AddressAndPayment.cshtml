@@ -156,9 +156,9 @@
                     <fieldset>
                         <div class="form-horizontal">
                             <div class="form-group">
-                                <div class="col-md-offset-1">
-                                    @Html.Label("Promo Code")
-                                    @Html.TextBox("PromoCode")
+                                <div class="col-md-offset-1" style="visibility:hidden" >
+                                    @Html.Label("Promo Code", htmlAttributes: new { @class = "control-label col-md-2",})
+                                    @Html.TextBox("Promo Code", "Free")
                                 </div>
                             </div>
                         </div>

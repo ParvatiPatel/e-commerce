@@ -14,7 +14,7 @@ using System.Web.Mvc.Html;
 */
 namespace E_commerce.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class CheckoutControllerController : Controller
     {
         EcommerceModel storeDB = new EcommerceModel();
@@ -36,7 +36,7 @@ namespace E_commerce.Controllers
         {
             var order = new Order();
             TryUpdateModel(order);
-
+            values["PromoCode"] = "Free";
             try
             {
                 if (string.Equals(values["PromoCode"], PromoCode,
