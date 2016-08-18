@@ -9,14 +9,25 @@ File description : _LoginPartial Page - to develop navbar based on the user logg
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+        <ul class="nav navbar-nav navbar-right">
+            @if (User.Identity.GetUserName() == "admin@admin.com")
+            {
+                <li><a href="@Url.Action("Index","Products")">Category</a></li>
+                <li><a href="@Url.Action("Index","Items")">Item</a></li>
+            }
+            else
+            {
+                <li><a href="@Url.Action("OrderList","CheckoutController")">Order History</a> </li>
+                <li>
+                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                </li>
+               
+            }
+           
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
     }
 }
 else
