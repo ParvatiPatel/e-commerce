@@ -1,4 +1,5 @@
 ﻿/// <autosync enabled="true" />
+/// <reference path="app.js" />
 /// <reference path="bootstrap.min.js" />
 /// <reference path="bxslider.min.js" />
 /// <reference path="jquery.easing.1.3.min.js" />
