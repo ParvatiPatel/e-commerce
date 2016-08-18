@@ -40,13 +40,12 @@ File description : Product Page - list of all the item.
                             </div>
                             <h2>
                                 <a href="@Url.Action("ItemDetails",new { id=item.IID})">
-                                    @if (item.Name.Length < 15)
-                                    {
+                                    @if (@item.Name.Length < 20) { 
                                         @item.Name
                                     }
                                     else
                                     {
-                                        @item.Name.Substring(0,15) ...
+                                        <p>@item.Name.Substring(0, 20) ...</p>
                                     }
 
                                 </a>

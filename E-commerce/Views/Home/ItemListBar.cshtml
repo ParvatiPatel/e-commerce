@@ -8,7 +8,18 @@
                 <div class="product-upper">
                     <img src="~/Assests/Uploads/Items/Thumbnails/@item.ThumbUrl" alt="@item.Name">
                 </div>
-                <h2><a href="@Url.Action("ItemDetails",new { id=item.IID})">@item.Name</a></h2>
+                <h2>
+                    <a href="@Url.Action("ItemDetails",new { id=item.IID})">
+                        @if (@item.Name.Length < 15)
+                        {
+                            @item.Name
+                        }
+                        else
+                        {
+                            <p>@item.Name.Substring(0, 15) ...</p>
+                        }
+                    </a>
+                </h2>
                 <div class="product-carousel-price">
                     @if (@item.Tag == "sale")
                     {
